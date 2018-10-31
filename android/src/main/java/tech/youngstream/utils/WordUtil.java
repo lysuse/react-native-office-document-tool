@@ -91,11 +91,9 @@ public class WordUtil {
                                     int height = Integer.parseInt(pic.get("height").toString());
                                     int picType = getPictureType(pic.get("type").toString());
                                     String imgPath = (String) pic.get("content");
-
-
                                     System.out.println("=="+imgPath);
                                     try {
-                                        run.addPicture(new FileInputStream(imgPath), XWPFDocument.PICTURE_TYPE_PNG, imgPath, Units.toEMU(148), Units.toEMU(48)); // 200x200 pixels
+                                        run.addPicture(new FileInputStream(imgPath), picType, imgPath, Units.toEMU(width), Units.toEMU(height)); // 200x200 pixels
                                     } catch (IOException e) {
                                         e.printStackTrace();
                                     }
